@@ -102,10 +102,10 @@ if Nav=='Get difference':
                 except:
                     st.error('Enter proper Values')
                         
-                if Year1[0]-Year2[0]>=0:
-                    st.metric(label="📈 GDP Growth",value=str(Year1[0]),delta=str(int(-(Year1[0]-Year2[0]/Year1[0]*100)))+'%')
-                if Year1[0]-Year2[0]<0:
-                    st.metric(label="📉 GDP Loss",value=str(Year1[0]),delta=str(int((Year1[0]-Year2[0]/Year1[0]*100)))+'%')
+               if Year1[0]<=Year2[0] :
+                    st.metric(label="📈 GDP Growth",value=str(Year1[0]),delta=str(int((Year1[0]-Year2[0]/Year1[0]*100)))+'%')
+                elif Year1[0]>Year2[0]<0:
+                    st.metric(label="📉 GDP Loss",value=str(Year1[0]),delta=str(int(-(Year1[0]-Year2[0]/Year1[0]*100)))+'%')
                 
         else:
             st.error('Enter proper Format -> Year 1 < Year 2')
